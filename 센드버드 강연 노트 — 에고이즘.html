@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///C:/Users/wltna/Downloads/sendbird_note.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>센드버드 강연 노트 — 에고이즘</title>
+<link href="./센드버드 강연 노트 — 에고이즘_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0f;
+    --surface: #161618;
+    --surface2: #1e1e21;
+    --border: #2a2a2f;
+    --accent: #c8f54a;
+    --accent2: #5b8dee;
+    --text: #e8e8ea;
+    --text-muted: #888890;
+    --text-dim: #555560;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 32px 100px;
+  }
+
+  /* HEADER */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 40px;
+    margin-bottom: 56px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .header .sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .quote-hero {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+  }
+
+  .quote-hero p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.7;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 52px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .section:nth-child(2) { animation-delay: 0.05s; }
+  .section:nth-child(3) { animation-delay: 0.10s; }
+  .section:nth-child(4) { animation-delay: 0.15s; }
+  .section:nth-child(5) { animation-delay: 0.20s; }
+  .section:nth-child(6) { animation-delay: 0.25s; }
+  .section:nth-child(7) { animation-delay: 0.30s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #0e0e0f;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    letter-spacing: 0.06em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #c8c8cc;
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+
+  .card p:last-child { margin-bottom: 0; }
+
+  .card strong {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* INSIGHT BOX */
+  .insight {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: rgba(200, 245, 74, 0.06);
+    border-left: 2px solid var(--accent);
+    border-radius: 2px;
+  }
+
+  .insight-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .insight p {
+    font-size: 13px !important;
+    color: #a8d840 !important;
+    margin: 0 !important;
+  }
+
+  /* EMOTION GRID */
+  .emotion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .emotion-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .emotion-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .emotion-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .emotion-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* RHYTHM TABLE */
+  .rhythm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .rhythm-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 16px;
+  }
+
+  .rhythm-key {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Noto Serif KR', serif;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+
+  .rhythm-val {
+    font-size: 13px;
+    color: #c8c8cc;
+    line-height: 1.7;
+  }
+
+  /* KEYWORD PILLS */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .pill.accent {
+    background: rgba(200, 245, 74, 0.1);
+    border-color: rgba(200, 245, 74, 0.3);
+    color: var(--accent);
+  }
+
+  /* GUILD SECTION */
+  .guild-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .guild-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+  }
+
+  .step-arrow {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-text {
+    font-size: 13px;
+    color: #c8c8cc;
+    line-height: 1.7;
+  }
+
+  .step-text strong {
+    color: #fff;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 12px;
+  }
+
+  .footer-left {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .footer-right {
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .emotion-grid { grid-template-columns: 1fr; }
+    .rhythm-grid  { grid-template-columns: 1fr; }
+    .two-col      { grid-template-columns: 1fr; }
+    .wrapper      { padding: 40px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="tag">에고이즘 내부 공유노트</div>
+    <h1>센드버드의 AI 에이전트 피벗 스토리,<br>그리고 변화관리</h1>
+    <p class="sub">2026 HR 컨퍼런스 · 센드버드코리아 이상희 대표이사</p>
+    <div class="quote-hero">
+      <p>"어려운 결정은 망해가는 게 분명할 때가 아니라,<br><strong>잘 되고 있을 때</strong> 찾아온다."</p>
+    </div>
+  </div>
+
+  <!-- 1. 왜 피벗했나 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="num">1</div>
+      <div>
+        <div class="section-title">왜 피벗했나 — 신호를 먼저 읽었다</div>
+        <div class="section-subtitle">위기와 기회가 같은 데이터 안에 있었다</div>
+      </div>
+    </div>
+    <div class="card">
+      <p>센드버드는 유니콘 등극 후에도 근본 질문을 놓지 않았다. <strong>"10년 뒤에도 이 시장에 있을 수 있는가."</strong></p>
+      <p>자신들이 타겟하던 "채팅 API" 검색량은 GPT 관련 대비 압도적으로 낮았고, 1년 사이 <strong>80% 급감</strong>했다. 동시에 새로운 신호도 포착됐다. "GPT를 우리 서비스에 어떻게 붙이지?"라는 검색어가 생겨나기 시작한 것.</p>
+      <p>사이드로 운영하던 스마트 어시스턴트 페이지 트래픽이 <strong>약 3배 성장</strong>하는 걸 보며 경영진의 화두가 바뀌었다. "AI가 큰 시장인가?"가 아니라 <strong>"언제, 얼마나 빠르게 움직이냐"</strong>로.</p>
+      <div class="insight">
+        <div class="insight-label">▸ 에고이즘 관점</div>
+        <p>각 브랜드사 고객이 지금 무엇을 검색하고 어디서 시간을 쓰는지, 그 흐름이 바뀌고 있다면 그게 신호다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 어떻게 시작했나 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="num">2</div>
+      <div>
+        <div class="section-title">어떻게 시작했나 — 실험이 먼저다</div>
+        <div class="section-subtitle">프로젝트 비치하우스 · 태스크포스 실험</div>
+      </div>
+    </div>
+    <div class="card">
+      <p>전사를 한 번에 바꾸려 하지 않았다. 태스크포스 하나를 꾸리고 목표는 크게 잡았다 — <strong>500만 달러.</strong> "작게 잡으면 조직이 진지하게 움직이지 않는다"는 판단이었다.</p>
+      <p>한 달짜리 전략 기획을 버리고 <strong>2주 만에 블로그 25개를 배포했다.</strong> 완벽한 전략보다 빠른 실행 → 데이터 확보 → 교정의 순서로 움직였다.</p>
+      <p>6개월 뒤 결과는 목표의 10% 수준(약 54만 달러). 하지만 진짜 수확은 숫자가 아니었다. <strong>"고객은 단순 챗봇이 아니라 주문조회·상담 이관·CRM 연동까지 끝내주는 에이전트를 원한다"</strong>는 인사이트가 다음 전략의 기반이 됐다.</p>
+      <div class="pills">
+        <span class="pill accent">빠른 실행</span>
+        <span class="pill accent">작은 신호 만들기</span>
+        <span class="pill">데이터로 논쟁 줄이기</span>
+        <span class="pill">계획표 버리기</span>
+        <span class="pill">교정 반복</span>
+      </div>
+      <div class="insight" style="margin-top:16px;">
+        <div class="insight-label">▸ 에고이즘 관점</div>
+        <p>전사 도입 전 한 팀, 한 가지 반복 업무부터 없애보고 그 결과를 공유하는 것이 시작이다. 작은 데이터가 생기면 논쟁이 줄고 대화가 시작된다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 어떻게 확산했나 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="num">3</div>
+      <div>
+        <div class="section-title">어떻게 확산했나 — 동시다발 전선</div>
+        <div class="section-subtitle">프로젝트 튜링 · 전사 피벗 7주</div>
+      </div>
+    </div>
+    <div class="card">
+      <p>전사 피벗은 7주 안에 <strong>제품·웹사이트·영업·마케팅·커뮤니케이션을 동시에</strong> 움직였다. 앞뒤 의존성이 강한 일반적 협업 방식이 아니라, 모든 팀이 같은 속도로 달리는 구조를 목표로 했다.</p>
+      <p>파이프라인이 움직이기 시작하자 분위기가 바뀌었다. 두 분기도 안 돼 전체 영업 파이프라인의 <strong>67%가 AI 에이전트로</strong> 채워졌다. 숫자가 나오기 전까지 불안해하던 사람들이 확신으로 돌아섰다.</p>
+      <p>판매 방식도 달라졌다. 기능·안정성이 아니라 <strong>결과값</strong> — 해결률, 비용 절감, 매출 기여 — 을 고객과 함께 모니터링하는 방식으로.</p>
+      <div class="insight">
+        <div class="insight-label">▸ 에고이즘 관점</div>
+        <p>그로스팀이 툴을 만들어도 사업부·운영부가 함께 움직이지 않으면 확산되지 않는다. 공통의 결과 지표를 먼저 합의하는 것이 중요하다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 사람이 가장 어렵다 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="num">4</div>
+      <div>
+        <div class="section-title">가장 어려운 건 기술이 아니었다</div>
+        <div class="section-subtitle">변화 관리 · 구성원 감정 다루기</div>
+      </div>
+    </div>
+    <div class="card">
+      <p>같은 피벗 발표를 들어도 반응은 제각각이다.</p>
+      <div class="emotion-grid">
+        <div class="emotion-card">
+          <div class="emotion-icon">🔥</div>
+          <div class="emotion-label">흥분</div>
+          <div class="emotion-desc">"드디어 AI 회사가 됐네, 나 여기서 일하고 싶었어"</div>
+        </div>
+        <div class="emotion-card">
+          <div class="emotion-icon">😨</div>
+          <div class="emotion-label">두려움</div>
+          <div class="emotion-desc">"내 역할이 없어지는 거 아닌가"</div>
+        </div>
+        <div class="emotion-card">
+          <div class="emotion-icon">😵</div>
+          <div class="emotion-label">혼란</div>
+          <div class="emotion-desc">"방향이 또 바뀌어? 나는 지금도 너무 바빠"</div>
+        </div>
+      </div>
+      <p>리더가 이걸 평균값으로 뭉뚱그리면 안 된다. <strong>같은 메시지가 누군가에게는 기회고, 누군가에게는 위협이다.</strong></p>
+      <div class="divider"></div>
+      <p><strong>"아직 모른다고 솔직하게 말하라."</strong> 가설을 확신처럼 말하다 틀리면 신뢰를 잃는다. 불확실성을 인정하되, 지금 알고 있는 것·모르는 것·다음에 확인할 것을 나눠서 말하면 조직은 따라온다.</p>
+      <p><strong>"침묵이 가장 큰 죄악이다."</strong> 정보가 비면 사람들은 스스로 해석한다. 그 빈자리는 대부분 루머와 불안으로 채워진다.</p>
+      <div class="insight">
+        <div class="insight-label">▸ 에고이즘 관점</div>
+        <p>AX 도입 과정에서 "우리 팀은 전반적으로 긍정적"이라고 넘기지 말 것. 특히 운영부처럼 반복 업무가 많은 팀은 위협감을 느낄 수 있다. 개별 팀 단위 소통이 필요하다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 피벗의 리듬 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="num">5</div>
+      <div>
+        <div class="section-title">피벗을 운영하는 3가지 리듬</div>
+        <div class="section-subtitle">Why · Role · Ritual</div>
+      </div>
+    </div>
+    <div class="rhythm-grid">
+      <div class="rhythm-item">
+        <div class="rhythm-key">Why</div>
+        <div class="rhythm-val">감이 아닌 데이터로 방향을 설명할 것. 비전만으로 사람은 오래 움직이지 않는다.</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-key">Role</div>
+        <div class="rhythm-val">"AI 회사 됩니다"가 아니라 <strong>"당신의 역할은 이것"</strong>을 구체적으로 말해줄 것.</div>
+      </div>
+      <div class="rhythm-item">
+        <div class="rhythm-key">Ritual</div>
+        <div class="rhythm-val">주간·월간 정기 소통, 작은 성공을 공개적으로 인정하는 루틴을 만들 것.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. AX 오토메이터 길드 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="num">6</div>
+      <div>
+        <div class="section-title">내부 AX는 어떻게 했나</div>
+        <div class="section-subtitle">오토메이터 길드 · 사내 RPG 자동화 플랫폼</div>
+      </div>
+    </div>
+    <div class="card">
+      <p><strong>"AI 배워야 해"</strong>라는 의무 대신, <strong>반복 업무를 없애는 사람이 인정받는 문화</strong>를 만들었다.</p>
+      <div class="guild-steps">
+        <div class="guild-step">
+          <div class="step-arrow">①</div>
+          <div class="step-text">구성원이 없애고 싶은 <strong>반복 업무를 퀘스트로 등록</strong></div>
+        </div>
+        <div class="guild-step">
+          <div class="step-arrow">②</div>
+          <div class="step-text">다른 구성원(빌더)이 퀘스트를 골라 <strong>자동화 툴로 해결</strong></div>
+        </div>
+        <div class="guild-step">
+          <div class="step-arrow">③</div>
+          <div class="step-text">해결하면 <strong>AXP(자동화 경험 포인트) 지급</strong> + 리더보드 공개</div>
+        </div>
+        <div class="guild-step">
+          <div class="step-arrow">④</div>
+          <div class="step-text">상위권이 자연스럽게 <strong>롤모델</strong>이 되는 문화 형성</div>
+        </div>
+      </div>
+      <p>강요 없이 자발적으로 AI가 일상에 스며들게 한 방식. 교육 참석이 아닌 <strong>실제 업무 현장의 문제 해결</strong>로 체화한다.</p>
+      <div class="insight">
+        <div class="insight-label">▸ 에고이즘 관점</div>
+        <p>"없애고 싶은 반복 업무 목록"을 각 팀에서 받아보는 것 자체가 AX의 시작점이 될 수 있다. 그로스팀과 연결하면 실질적인 첫 퀘스트가 만들어진다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      2026 HR 컨퍼런스 · 센드버드코리아 이상희 대표이사 강연<br>
+      에고이즘 내부 공유용으로 정리한 노트입니다.
+    </div>
+    <div class="footer-right">EGOISM Internal</div>
+  </div>
+
+</div>
+
+
+</body></html>
